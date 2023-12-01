@@ -1,10 +1,11 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import BasicExample from './components/NavBar'
-
+import NavBar from './components/NavBar';
+import ItemListContainer from './components/ItemListContainer';
 const App = () => {
   return (
     <div>
-      <BasicExample/>
+      <NavBar/>
+      <ItemListContainer Bienvenidos={'Bienvenidos'}/>
     </div>
   )
 }

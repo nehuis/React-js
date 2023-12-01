@@ -1,3 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
 .navbar{
     background-color: pink;
+    display: flex;
+    height: 160px;
+    width: 100%;
+}
+.dropdown{
+    margin-left: 350px;
+}
+.logo-img{
+    height: 180px;
+}
+.saludo{
+    margin-left: 550px;
+    margin-top: 50px;
 }

@@ -1,0 +1,19 @@
+.card{
+    margin: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+}
+.card-body{
+    background-color: gray;
+    display: flex;
+}
+.card-info{
+    margin-left: 100px;
+}
+.card-footer{
+    background-color: gray;
+}
+.botones{
+    margin-left: 100px;
+}

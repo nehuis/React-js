@@ -1,23 +1,10 @@
 import { Button } from '@chakra-ui/react'
-import { useState } from 'react'
+import { useContext } from 'react'
+import { CartContext } from '../../Context/cartContext'
+
 const ItemCount = () => {
-    const [contador, setContador] = useState(0)
 
-    const mostrarMensaje = () => {
-        alert(`agregado al carrito ${contador} unidades`)
-    }
-
-    const sumar = () => {
-        if (contador < 10) {
-            setContador(contador + 1)
-        }
-    }
-
-    const restar = () => {
-        if (contador > 0) {
-            setContador(contador - 1)
-        }
-    }
+    const {sumar, restar, mostrarMensaje, contador} = useContext(CartContext)
 
     return (
         <div>

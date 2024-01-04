@@ -6,7 +6,7 @@ import { Menu, MenuButton, MenuList, MenuItem } from '@chakra-ui/react';
 const NavBar= () => {
   return (
     <div className='navbar'>
-      <Link to={"/"}>
+      <Link to={"/"} className='logo'>
       Caran Autopartes
       </Link>
       <Menu>
@@ -26,7 +26,7 @@ const NavBar= () => {
         </MenuList>
       </Menu>
       
-      <Link to={"/cart"}>
+      <Link to={"/cart"} className='cart'>
       <CartWidget/>
       </Link>
     </div>

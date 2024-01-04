@@ -1,3 +1,14 @@
 .navbar{
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
     background-color: rgb(238, 168, 38);
+}
+.logo{
+    margin-top: 40px;
+    margin-left: 20px;
+}
+.cart{
+    margin-top: 40px;
+    margin-right: 20px;
 }

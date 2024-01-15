@@ -1,46 +1,34 @@
-import ItemList from "../ItemList/ItemList";
+import ItemList from "../ItemList/ItemList"
 import '../ItemListContainer/ItemListContainer.css'
-import { useParams } from "react-router-dom";
+import { useState } from "react";
+import { useParams } from 'react-router-dom';
+import { useEffect } from "react";
+import { collection, getDocs, getFirestore, query, where } from "firebase/firestore"
 
 const ItemListContainer = () => {
-
   const { categoryId } = useParams()
 
-  const productos = [
-    {id: 1, titulo: "Producto A", category: "A", descripcion: "descripcion del producto a", precio: 1000},
-    {id: 2, titulo: "Producto B", category: "A", descripcion: "descripcion del producto b", precio: 2000},
-    {id: 3, titulo: "Producto C", category: "B", descripcion: "descripcion del producto c", precio: 3000},
-    {id: 4, titulo: "Producto D", category: "B", descripcion: "descripcion del producto c", precio: 4000},
-    {id: 5, titulo: "Producto E", category: "C", descripcion: "descripcion del producto c", precio: 5000},
-    {id: 6, titulo: "Producto F", category: "C", descripcion: "descripcion del producto c", precio: 6000}
-  ]
+  const [products, setProducts] = useState([])
 
-  const mostrarProductos = new Promise((resolve, reject) => {
-    if (productos.lenght > 0) {
-      setTimeout(() => {
-        resolve(productos)
-      }, 2000)
-    } else {
-      reject("No se obtuvieron productos")
-  }
-  })
+  useEffect(() => {
+    const db = getFirestore()
 
-  mostrarProductos
-  .then((resultado) => {
-    //console.log(resultado)
-  })
-  .catch((error) => {
-    console.log(error)
-  })
+    const itemsCollection = collection(db, "repuestos")
 
-  const productosFiltrados = productos.filter((producto) => producto.category == categoryId)
-  console.log(productosFiltrados)
+    const productosFiltrados = categoryId ? query(itemsCollection, where("categoryId", "==", categoryId)) : itemsCollection
+
+    getDocs(productosFiltrados).then((snapshot) => {
+        setProducts(
+          snapshot.docs.map((doc) => {
+            return {...doc.data(), id: doc.id}
+          })
+        )
+    })
+}, [categoryId])
 
     return (
       <div>
-        {
-          categoryId ? <ItemList productos={productosFiltrados}/>: <ItemList productos={productos}/>
-        }
+        <ItemList productos={products}/>
       </div>
     );
   };

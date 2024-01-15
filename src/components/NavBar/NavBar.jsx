@@ -14,18 +14,17 @@ const NavBar= () => {
           Categorias
         </MenuButton>
         <MenuList>
-          <Link to={'/category/A'}>
-          <MenuItem>Categoria A</MenuItem>
+          <Link to={'/category/Autos'}>
+          <MenuItem>Autos</MenuItem>
           </Link>
-          <Link to={'/category/B'}>
-          <MenuItem>Categoria B</MenuItem>
+          <Link to={'/category/Motos'}>
+          <MenuItem>Motos</MenuItem>
           </Link>
-          <Link to={'/category/C'}>
-          <MenuItem>Categoria C</MenuItem>
+          <Link to={'/category/Camionetas'}>
+          <MenuItem>Camionetas</MenuItem>
           </Link>
         </MenuList>
       </Menu>
-      
       <Link to={"/cart"} className='cart'>
       <CartWidget/>
       </Link>

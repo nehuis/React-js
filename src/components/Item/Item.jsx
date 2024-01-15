@@ -1,6 +1,6 @@
 import { Card, CardBody, Stack, Heading, CardFooter, ButtonGroup, Button } from "@chakra-ui/react"
 import '../Item/item.css'
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom" 
 
 const Item = ({ titulo, id }) => {
     return (
@@ -14,7 +14,7 @@ const Item = ({ titulo, id }) => {
                 <CardFooter className='card-footer'>
                     <ButtonGroup className='botones' spacing='2'>
                         <Button>
-                            <Link to={`/producto/${id}`}>
+                            <Link to={`/product/${id}`}>
                                 Ver detalle
                             </Link>
                         </Button>

@@ -1,54 +1,46 @@
 import { createContext } from "react";
 import { useState } from "react";
 
-export const CartContext = createContext({
-    cart: []
-}) 
+export const CartContext = createContext()
 
 export const CartProvider = ({ children }) => {
+
     const [cart, setCart] = useState([])
-    console.log (cart)
 
-    const addItem = (producto, quantity) => {
-        if (!isInCart(item.id)) {
-            setCart(prev => [...prev, {...producto, quantity}])
+    const addToCart = (product, contador) => {
+        const itemAdd = {...product, contador}
+
+        const newCart = [...cart]
+        
+        const isInCart = cart.find((product) => product.id === itemAdd)
+        if (isInCart) {
+            isInCart.contador += contador
         } else {
-            console.error('El producto ya fue agregado')
+            newCart.push(itemAdd)   
         }
+        setCart([...cart, itemAdd])
     }
-
-    const removeItem = (id) => {
-        const cartUpdated = cart.filter(producto => producto.id !== id)
-        setCart(cartUpdated)
-    }
-
-    const clearCart = () => {
-        setCart([])
-    } 
-
-    const isInCart = (id) => {
-        return cart.some(producto => producto.id === id)
-    }
+    console.log(cart)
 
     const [contador, setContador] = useState(0)
 
-    const mostrarMensaje = () => {
-        alert(`agregado al carrito ${contador} unidades`)
-    }
-
-    const sumar = () => {
+    const sumarProductos = () => {
         if (contador < 10) {
             setContador(contador + 1)
         }
     }
 
-    const restar = () => {
+    const restarProductos = () => {
         if (contador > 0) {
             setContador(contador - 1)
         }
     }
+
+    const quantityInCart = () => {
+        return cart.reduce((acc, product) => acc + product.contador, 0)
+    }
     return (
-        <CartContext.Provider value={{ cart, addItem, removeItem, clearCart, mostrarMensaje, sumar, restar, contador }}>
+        <CartContext.Provider value={{ cart, setCart, sumarProductos, restarProductos, contador, setContador,addToCart, quantityInCart}}>
             { children }
         </CartContext.Provider>
     )

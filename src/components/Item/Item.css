@@ -9,11 +9,15 @@
     display: flex;
 }
 .card-info{
-    margin-left: 100px;
+    margin-left: 85px;
 }
 .card-footer{
     background-color: gray;
 }
 .botones{
-    margin-left: 100px;
+    margin-left: 110px;
+}
+
+img{
+    height: 250px;
 }

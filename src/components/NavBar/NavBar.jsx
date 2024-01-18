@@ -6,22 +6,22 @@ import { Menu, MenuButton, MenuList, MenuItem } from '@chakra-ui/react';
 const NavBar= () => {
   return (
     <div className='navbar'>
-      <Link to={"/"} className='logo'>
-      Caran Autopartes
+      <Link to={"/"}>
+        <img src="../src/components/Multimedia/logo_transparent.png" alt="logo" className='logo'/>
       </Link>
       <Menu>
         <MenuButton>
-          Categorias
+          Categorias ↓
         </MenuButton>
-        <MenuList>
+        <MenuList className='menu-list'>
           <Link to={'/category/Autos'}>
-          <MenuItem>Autos</MenuItem>
+          <MenuItem>Autos 🚗</MenuItem>
           </Link>
           <Link to={'/category/Motos'}>
-          <MenuItem>Motos</MenuItem>
+          <MenuItem>Motos 🏍️</MenuItem>
           </Link>
           <Link to={'/category/Camionetas'}>
-          <MenuItem>Camionetas</MenuItem>
+          <MenuItem>Camionetas 🚐</MenuItem>
           </Link>
         </MenuList>
       </Menu>

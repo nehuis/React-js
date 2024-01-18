@@ -10,6 +10,7 @@ const ItemList = ({ productos }) => {
                     return(
                         <Item
                         key={p.id}
+                        imagen={p.Imagen}
                         titulo={p.Nombre}
                         precio={p.Precio}
                         id={p.id}

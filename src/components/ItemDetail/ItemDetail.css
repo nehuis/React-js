@@ -1,10 +1,21 @@
 .detail{
-    margin-left: 490px;
-    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
 }
 .body{
     background-color: goldenrod;
 }
 .footer{
     background-color: goldenrod;
+}
+.title{
+    margin-left: 70px;
+}
+.texto{
+    margin-left: 10px;
+    font-size: 15px;
 }

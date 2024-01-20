@@ -9,13 +9,13 @@
     display: flex;
 }
 .card-info{
-    margin-left: 85px;
+    margin: auto;
 }
 .card-footer{
     background-color: gray;
 }
 .botones{
-    margin-left: 110px;
+    margin: auto;
 }
 
 img{

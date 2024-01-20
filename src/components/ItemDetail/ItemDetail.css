@@ -7,15 +7,23 @@
 
 }
 .body{
-    background-color: goldenrod;
+    background-color: lightgrey;
 }
 .footer{
-    background-color: goldenrod;
+    background-color: lightgrey;
 }
 .title{
-    margin-left: 70px;
+    margin: auto;
 }
 .texto{
-    margin-left: 10px;
+    margin: auto;
     font-size: 15px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.precio{
+    margin: auto;
+}
+.counter{
+    margin: auto;
 }

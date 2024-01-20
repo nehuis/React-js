@@ -16,12 +16,12 @@ const ItemDetail = ({ product }) => {
                             {product.Nombre}
                         </Heading>
                         <Text className='texto'>{product.Descripcion}</Text>
-                        <Text color='blue.600' fontSize='2xl'>${product.Precio}</Text>
+                        <Text color='black' fontSize='2xl' className='precio'>${product.Precio}</Text>
                     </Stack>
                 </CardBody>
                 <Divider />
                 <CardFooter className='footer'>
-                    <ButtonGroup spacing='2'>
+                    <ButtonGroup spacing='2' className='counter'>
                         <ItemCount product={product}/>
                     </ButtonGroup>
                 </CardFooter>

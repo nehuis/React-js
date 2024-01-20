@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { CartContext } from '../../Context/CartContext'
-import { Button } from '@chakra-ui/react'
+import { Button, Divider } from '@chakra-ui/react'
 import './cart.css'
 import { Link } from 'react-router-dom'
 
@@ -31,10 +31,13 @@ const cart = () => {
         { cart.length > 0 ?
           <>
             <h2 className='total'>Precio total: ${totalPrice()}</h2>
-            <Button onClick={cleanCart}>Eliminar productos</Button>
-            <Link to="/checkout">Finalizar compra</Link>
+            <button onClick={cleanCart} className='botoncito'>Eliminar productos</button> 
+            <Link to="/checkout" className='finish'>Comprar</Link>
           </> :
-          <h2>Carrito vacio</h2>
+          <h2 className='empty'>
+            Carrito vacío
+            <Link to={"/"}><Button className='volver'>Volver al catálogo</Button></Link>
+          </h2>
         }
       </div>
     )

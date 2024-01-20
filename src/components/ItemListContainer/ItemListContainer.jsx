@@ -4,13 +4,18 @@ import { useState } from "react";
 import { useParams } from 'react-router-dom';
 import { useEffect } from "react";
 import { collection, getDocs, getFirestore, query, where } from "firebase/firestore"
+import Loader from "../Loader/Loader";
 
 const ItemListContainer = () => {
   const { categoryId } = useParams()
 
   const [products, setProducts] = useState([])
 
+  const [loading, setLoading] = useState("false")
+
   useEffect(() => {
+    setLoading(true)
+
     const db = getFirestore()
 
     const itemsCollection = collection(db, "repuestos")
@@ -20,6 +25,7 @@ const ItemListContainer = () => {
     getDocs(productosFiltrados).then((snapshot) => {
         setProducts(
           snapshot.docs.map((doc) => {
+            setLoading(false)
             return {...doc.data(), id: doc.id}
           })
         )
@@ -28,7 +34,10 @@ const ItemListContainer = () => {
 
     return (
       <div>
-        <ItemList productos={products}/>
+        {
+          loading ? <Loader /> :
+          <ItemList productos={products}/>
+        }
       </div>
     );
   };

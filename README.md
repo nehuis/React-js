@@ -27,3 +27,7 @@ Seleccionamos un producto cualquiera y presionamos "Ver detalle". Luego, agregam
 
 Si nos dirigimos al carrito mientras está vacío, por medio de una técnica de rendering, se mostrará un mensaje avisando que no hay productos, y al lado, habrá un botón, que al presionarlo, nos llevará al catálogo para iniciar la compra.
 Cuando el carrito tenga productos, se verá el desglose de estos, junto con un botón para eliminar productos y otro para finalizar la compra.
+
+---
+En el siguiente video se puede ver el funcionamiento del sitio en general:
+[Funcionamiento del sitio](![1705961041122](image/README/1705961041122.mp4))

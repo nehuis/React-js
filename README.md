@@ -30,4 +30,4 @@ Cuando el carrito tenga productos, se verá el desglose de estos, junto con un b
 
 ---
 En el siguiente video se puede ver el funcionamiento del sitio en general:
-[Funcionamiento del sitio](![1705961041122](image/README/1705961041122.mp4))
+![1705961934212](image/README/1705961934212.gif)

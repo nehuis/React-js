@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { CartContext } from '../../Context/CartContext'
-import { Button, Divider } from '@chakra-ui/react'
+import { Button } from '@chakra-ui/react'
 import './cart.css'
 import { Link } from 'react-router-dom'
 

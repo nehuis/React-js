@@ -32,6 +32,38 @@ const Checkout = () => {
 
   return (
     <div>
+      <h1 className={`textito ${alert !== "none" ? "hidden" : "visible"}`}>
+        Complete el siguiente formulario para finalizar su compra
+      </h1>
+
+      <form action="" onSubmit={handleSubmit} className={`form-checkout ${alert === "none" ? "visible" : "hidden"}`}>
+        <input
+          required
+          type="text"
+          className="controls"
+          placeholder="Nombre"
+          onChange={(e) => setNombre(e.target.value)}
+          value={nombre}
+        />
+        <input
+          required
+          type="email"
+          className="controls"
+          placeholder="Email"
+          onChange={(e) => setEmail(e.target.value)}
+          value={email}
+        />
+        <input
+          required
+          type="tel"
+          className="controls"
+          placeholder="Teléfono"
+          onChange={(e) => setTelefono(e.target.value)}
+          value={telefono}
+        />
+        <button type="submit" className="send" onClick={() => setAlert('')}>Enviar</button>
+      </form>
+
       <Alert
         status="success"
         variant="subtle"
@@ -52,36 +84,6 @@ const Checkout = () => {
           El ID de su compra es: {orderId}
         </AlertDescription>
       </Alert>
-      <h1 className={`textito ${alert !== "none" ? "hidden" : "visible"}`}>
-        Complete el siguiente formulario para finalizar su compra
-      </h1>
-      <form action="" onSubmit={handleSubmit} className={`form-checkout ${alert === "none" ? "visible" : "hidden"}`}>
-        <input
-          type="text"
-          className="controls"
-          placeholder="Nombre"
-          required
-          onChange={(e) => setNombre(e.target.value)}
-          value={nombre}
-        />
-        <input
-          type="email"
-          className="controls"
-          placeholder="Email"
-          required
-          onChange={(e) => setEmail(e.target.value)}
-          value={email}
-        />
-        <input
-          type="tel"
-          className="controls"
-          placeholder="Teléfono"
-          required
-          onChange={(e) => setTelefono(e.target.value)}
-          value={telefono}
-        />
-        <button className="send" onClick={() => setAlert('')}>Enviar</button>
-      </form>
     </div>
   );
 };

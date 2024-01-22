@@ -1,3 +1,13 @@
 .general{
     background-color: wheat;
 }
+.general::-webkit-scrollbar{
+    width: 12px;
+}
+.general::-webkit-scrollbar-thumb{
+    background: rgb(155, 101, 0);
+    border-radius: 50px;
+}
+.general::-webkit-scrollbar-thumb:hover{
+    background: rgb(119, 77, 0);
+}

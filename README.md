@@ -17,7 +17,7 @@ A continuación, se detallará punto por punto el funcionamiento del mismo.
 
 Al entrar al proyecto, se podrá ver la navbar. En la misma, se ubica el logo de la empresa, un botón, que al presionarlo despliega una lista con las distintas categorías. Al seleccionar cualquiera de estas, mediante un filtrado por categoría, se muestran los productos relacionados con la misma, y por último, el carrito con su CartWidget.
 Debajo, se verá un loader, que desaparece en cuanto la información de los productos llegue.
-Cada producto tiene su respectiva imágen, junto con el botón "Ver detalle". Cuando se apreta este botón, se hará otro filtrado, pero esta vez por ID, de esta forma, se mostrará la información específica del producto seleccionado.
+Cada producto tiene su respectiva imagen, junto con el botón "Ver detalle". Cuando se apreta este botón, se hará otro filtrado, pero esta vez por ID, de esta forma, se mostrará la información específica del producto seleccionado.
 
 ## ¿Cómo realizar una compra?
 
